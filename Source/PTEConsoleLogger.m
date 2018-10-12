@@ -73,7 +73,7 @@
     if (self)
     {
         // Default values
-        _maxMessages = 1000;
+        _maxMessages = 1000000;
         _fontSize = 13.0;
         _font = [UIFont systemFontOfSize:_fontSize];
         _lastUpdate = NSDate.date;

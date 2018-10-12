@@ -153,22 +153,17 @@ static PTEDashboard * _sharedDashboard;
      }];
 }
 
+// 最小化窗口
 - (IBAction)toggleFullscreen:(UIButton *)sender
 {
     sender.selected = !sender.selected;
     
-    [UIView animateWithDuration:0.2
-                     animations:^
-     {
-         if (sender.selected)
-         {
-             self.maximized = YES;
-         }
-         else
-         {
-             self.minimized = YES;
-         }
-     }];
+    [UIView animateWithDuration:0.2 animations:^{
+        [self setMinimized:YES];
+    } completion:^(BOOL finished) {
+        if (finished)
+            self.hidden = YES;
+    }];
 }
 
 - (IBAction)toggleAdjustLevelsController:(id)sender

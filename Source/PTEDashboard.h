@@ -46,6 +46,9 @@
 /// Whether the dashboard is minimized.
 @property (nonatomic, getter=isMinimized)   BOOL minimized;
 
+/// 添加block，通知主控制器tableview加载完毕
+@property (nonatomic, copy) void(^logTableViewLoadFinishedBlock)(void);
+
 /// @name First Responder Actions
 
 /// Maximize/minimize the log dashboard.
